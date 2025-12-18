@@ -2,160 +2,29 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MindSpace</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MindSpace – Psychologische Sicherheit im Team</title>
+  <meta name="description" content="MindSpace stärkt psychologische Sicherheit im Team: anonyme Pulsfragen, Insights, Maßnahmen & Team-Reflexion. Buche eine Demo per Calendly." />
+  <meta name="theme-color" content="#6D28D9" />
 
-  <!-- NAV / MENU BAR -->
-  <header class="nav">
-    <div class="nav__inner">
-      <div class="logo">MindSpace</div>
+  <!-- Open Graph -->
+  <meta property="og:title" content="MindSpace – Psychologische Sicherheit im Team" />
+  <meta property="og:description" content="Anonyme Pulsfragen, Insights & Maßnahmen. Buche eine Demo." />
+  <meta property="og:type" content="website" />
 
-      <nav class="nav__links">
-        <a href="#about">Über</a>
-        <a href="#help">So hilft MindSpace</a>
-        <a href="#services">Bausteine</a>
-      </nav>
-
-      <a class="btn" href="https://calendly.com/DEIN-LINK" target="_blank" rel="noopener">
-        Demo buchen
-      </a>
-
-      <button class="nav__burger" id="burger" aria-label="Menü">
-        ☰
-      </button>
-    </div>
-
-    <div class="nav__mobile" id="mobile" hidden>
-      <a href="#about">Über</a>
-      <a href="#help">So hilft MindSpace</a>
-      <a href="#services">Bausteine</a>
-      <a class="btn btn--full" href="https://calendly.com/DEIN-LINK" target="_blank" rel="noopener">Demo buchen</a>
-    </div>
-  </header>
-
-  <!-- SECTION 1: HERO (Text links, Image rechts) -->
-  <section class="section hero">
-    <div class="container hero__grid">
-      <div>
-        <span class="tag">Projekt · Modul Projektmanagement</span>
-        <h1>Catchy Headline (Kickoff-Unterpunkt)</h1>
-        <p class="sub">
-          Brand promise / Kurzbeschreibung (Kickoff-Unterpunkt)
-        </p>
-
-        <div class="lines">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line small"></div>
-        </div>
-
-        <a class="btn" href="https://calendly.com/DEIN-LINK" target="_blank" rel="noopener">
-          CTA aus Kickoff
-        </a>
-      </div>
-
-      <div class="imageBox">
-        Bild / Screenshot / Mockup
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 2: BAND (H2 + Kontext + CTA) -->
-  <section class="band" id="about">
-    <div class="container band__inner">
-      <h2>Catchy Headline (Kickoff-Unterpunkt)</h2>
-      <div class="lines center">
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-      <p class="sub center">
-        Mehr Kontext, was MindSpace macht (Kickoff-Unterpunkt)
-      </p>
-      <a class="btn" href="https://calendly.com/DEIN-LINK" target="_blank" rel="noopener">
-        CTA aus Kickoff
-      </a>
-    </div>
-  </section>
-
-  <!-- SECTION 3: Image links, Text rechts -->
-  <section class="section" id="help">
-    <div class="container grid2">
-      <div class="imageBox">
-        Bild / Use-Case / Visual
-      </div>
-
-      <div>
-        <h2>THIS IS HOW I CAN HELP YOU (Kickoff-Unterpunkt)</h2>
-
-        <div class="lines">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line small"></div>
-        </div>
-
-        <p class="sub">
-          Pain Points + warum MindSpace löst (Kickoff-Unterpunkt)
-        </p>
-
-        <a class="btn" href="https://calendly.com/DEIN-LINK" target="_blank" rel="noopener">
-          CTA aus Kickoff
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 4: Services (3 Cards) -->
-  <section class="section light" id="services">
-    <div class="container">
-      <h2>THESE ARE MY SERVICES (Kickoff-Unterpunkt)</h2>
-      <div class="divider"></div>
-
-      <div class="cards">
-        <article class="card">
-          <div class="card__img">Image</div>
-          <h3>Service 1 (Kickoff-Unterpunkt)</h3>
-          <p>Mini-Erklärung (Kickoff-Unterpunkt)</p>
-          <a class="btn btn--small" href="https://calendly.com/DEIN-LINK" target="_blank" rel="noopener">CTA</a>
-        </article>
-
-        <article class="card">
-          <div class="card__img">Image</div>
-          <h3>Service 2 (Kickoff-Unterpunkt)</h3>
-          <p>Mini-Erklärung (Kickoff-Unterpunkt)</p>
-          <a class="btn btn--small" href="https://calendly.com/DEIN-LINK" target="_blank" rel="noopener">CTA</a>
-        </article>
-
-        <article class="card">
-          <div class="card__img">Image</div>
-          <h3>Service 3 (Kickoff-Unterpunkt)</h3>
-          <p>Mini-Erklärung (Kickoff-Unterpunkt)</p>
-          <a class="btn btn--small" href="https://calendly.com/DEIN-LINK" target="_blank" rel="noopener">CTA</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <span>MindSpace · Landing Page</span>
-      <span class="dot">•</span>
-      <span>Pitch-Video: (weiter unten einfügen, wenn ihr wollt)</span>
-    </div>
-  </footer>
-
-  <script>
-    const burger = document.getElementById("burger");
-    const mobile = document.getElementById("mobile");
-    burger?.addEventListener("click", () => {
-      mobile.hidden = !mobile.hidden;
-    });
-    mobile?.addEventListener("click", (e) => {
-      if (e.target.tagName.toLowerCase() === "a") mobile.hidden = true;
-    });
-  </script>
-</body>
-</html>
+  <style>
+    :root{
+      --bg:#0B0B12;
+      --card:#121225;
+      --text:#EDEDF7;
+      --muted:#B8B8D6;
+      --line:rgba(255,255,255,.10);
+      --accent:#7C3AED;  /* violett */
+      --accent2:#22C55E; /* grün */
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 22px;
+      --max: 1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(900px 600px at 20% -10%, rgba(124,58,237,.35), transparent 60%),
+                               radial-gradient(900px 600px at 10
