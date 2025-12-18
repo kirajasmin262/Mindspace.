@@ -27,4 +27,473 @@
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:radial-gradient(900px 600px at 20% -10%, rgba(124,58,237,.35), transparent 60%),
-                               radial-gradient(900px 600px at 10
+                               radial-gradient(900px 600px at 100% 30%, rgba(34,197,94,.18), transparent 55%),
+                               var(--bg);
+              color:var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:12px 16px;border-radius:999px;
+      background:linear-gradient(135deg,var(--accent), #9D4EDD);
+      color:white;font-weight:700;border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 14px 30px rgba(124,58,237,.25);
+      transition:transform .12s ease, filter .12s ease;
+    }
+    .btn:hover{transform:translateY(-1px);filter:saturate(1.05)}
+    .btn.secondary{
+      background:rgba(255,255,255,.06);
+      box-shadow:none;
+    }
+    .tag{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-weight:600;
+      backdrop-filter: blur(8px);
+    }
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(11,11,18,.65);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.2px;
+    }
+    .logo{
+      width:38px;height:38px;border-radius:14px;
+      background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), transparent 55%),
+                 linear-gradient(135deg,var(--accent), #0EA5E9);
+      box-shadow:0 18px 40px rgba(124,58,237,.25);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);font-weight:700}
+    nav a:hover{color:var(--text)}
+    .burger{display:none;background:transparent;border:0;color:var(--text);font-size:22px}
+    .hero{
+      padding:64px 0 24px;
+    }
+    .grid{
+      display:grid;grid-template-columns: 1.2fr .8fr; gap:24px; align-items:stretch;
+    }
+    .h1{
+      font-size: clamp(34px, 4vw, 56px);
+      line-height:1.05;margin:14px 0 12px;font-weight:950;
+      letter-spacing:-.7px;
+    }
+    .lead{color:var(--muted);font-size:clamp(16px,1.4vw,18px);line-height:1.65;margin:0 0 18px}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .heroCard{padding:18px}
+    .miniStats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+    .stat{padding:12px;border-radius:18px;border:1px solid var(--line);background:rgba(0,0,0,.18)}
+    .stat b{display:block;font-size:15px}
+    .stat span{color:var(--muted);font-size:13px}
+
+    section{padding:44px 0}
+    .sectionTitle{font-size:26px;margin:0 0 12px;font-weight:900}
+    .sectionDesc{margin:0 0 18px;color:var(--muted);line-height:1.7}
+
+    .features{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+    }
+    .feature{padding:16px}
+    .feature h3{margin:10px 0 8px;font-size:16px}
+    .feature p{margin:0;color:var(--muted);line-height:1.6}
+    .icon{
+      width:44px;height:44px;border-radius:16px;
+      display:grid;place-items:center;
+      background:rgba(124,58,237,.18);
+      border:1px solid rgba(124,58,237,.35);
+    }
+
+    .how{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+    }
+    .step{padding:16px}
+    .step .n{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;
+            background:rgba(34,197,94,.16);border:1px solid rgba(34,197,94,.35);font-weight:900}
+    .step h3{margin:12px 0 8px;font-size:16px}
+    .step p{margin:0;color:var(--muted);line-height:1.6}
+
+    .split{
+      display:grid;grid-template-columns: 1fr 1fr; gap:14px;
+    }
+    .box{padding:18px}
+    .list{margin:10px 0 0;padding:0;list-style:none}
+    .list li{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line)}
+    .check{
+      width:22px;height:22px;border-radius:8px;flex:0 0 22px;margin-top:2px;
+      background:rgba(34,197,94,.18);border:1px solid rgba(34,197,94,.35);
+      display:grid;place-items:center;font-weight:900;
+    }
+
+    .cta{
+      padding:18px;
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      background:radial-gradient(600px 240px at 10% 50%, rgba(124,58,237,.35), transparent 60%),
+                 radial-gradient(600px 240px at 90% 50%, rgba(34,197,94,.22), transparent 55%),
+                 rgba(255,255,255,.03);
+    }
+    .cta h3{margin:0 0 6px;font-size:18px}
+    .cta p{margin:0;color:var(--muted);line-height:1.6}
+    .cta .actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+
+    .faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    details{
+      padding:14px 16px;border-radius:18px;border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+    }
+    summary{cursor:pointer;font-weight:800}
+    details p{color:var(--muted);line-height:1.65;margin:10px 0 0}
+
+    footer{
+      padding:30px 0 50px;color:var(--muted);border-top:1px solid var(--line)
+    }
+    .footGrid{display:grid;grid-template-columns:1.3fr .7fr;gap:14px;align-items:start}
+    .small{font-size:13px;color:rgba(184,184,214,.9);line-height:1.6}
+
+    /* Calendly container */
+    .calWrap{padding:0;overflow:hidden}
+    .calHeader{padding:18px;border-bottom:1px solid var(--line)}
+    .calHeader p{margin:6px 0 0;color:var(--muted)}
+    .calInline{min-height:720px}
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .grid{grid-template-columns:1fr;gap:14px}
+      .features{grid-template-columns:1fr}
+      .how{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
+      .faq{grid-template-columns:1fr}
+      .miniStats{grid-template-columns:1fr}
+      nav ul{display:none}
+      .burger{display:inline-flex}
+      nav ul.open{
+        display:flex;flex-direction:column;align-items:flex-start;
+        position:absolute;right:18px;top:62px;
+        background:rgba(18,18,37,.96);
+        border:1px solid var(--line);
+        padding:14px;border-radius:18px;box-shadow: var(--shadow);
+        width:min(320px, calc(100vw - 36px));
+      }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="MindSpace Start">
+      <span class="logo" aria-hidden="true"></span>
+      <span>MindSpace</span>
+    </a>
+
+    <button class="burger" id="burger" aria-label="Menü öffnen">☰</button>
+
+    <nav>
+      <ul id="navList">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#solution">Lösung</a></li>
+        <li><a href="#features">Funktionen</a></li>
+        <li><a href="#booking">Demo buchen</a></li>
+        <li><a class="btn" href="#booking">Termin</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap grid">
+      <div>
+        <span class="tag">🧠 Psychologische Sicherheit • Anonym • Handlungsorientiert</span>
+        <h1 class="h1">Teams sprechen ehrlicher, wenn es sicher ist.</h1>
+        <p class="lead">
+          MindSpace macht psychologische Sicherheit messbar – durch kurze, anonyme Pulsfragen.
+          Ihr erkennt Muster, findet Ursachen und leitet konkrete Verbesserungen ab – ohne Schuldzuweisungen.
+        </p>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+          <a class="btn" href="#booking">Demo/Termin buchen</a>
+          <a class="btn secondary" href="#features">Funktionen ansehen</a>
+        </div>
+
+        <div class="miniStats">
+          <div class="stat">
+            <b>1–2 Minuten</b>
+            <span>pro Check-in (kurz & niedrigschwellig)</span>
+          </div>
+          <div class="stat">
+            <b>Anonym & sicher</b>
+            <span>ehrliche Rückmeldungen ohne Druck</span>
+          </div>
+          <div class="stat">
+            <b>Aus Daten → Taten</b>
+            <span>Insights + Maßnahmen-Ableitung</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card heroCard">
+        <div style="padding:14px;border-radius:18px;border:1px solid var(--line);background:rgba(0,0,0,.18)">
+          <b style="display:block;font-size:15px">Was ist MindSpace?</b>
+          <p class="sectionDesc" style="margin:10px 0 0">
+            Eine einfache Team-Routine für mehr Offenheit: wöchentliche anonyme Fragen,
+            Trends/Heatmaps, Gesprächsanlässe und kleine Interventionen.
+          </p>
+        </div>
+
+        <div style="margin-top:12px;display:grid;gap:10px">
+          <div style="padding:12px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.04)">
+            <b>Typische Teamsymptome</b>
+            <div class="small" style="margin-top:6px">
+              Ideen werden nicht ausgesprochen • Fehler werden versteckt • Meetings sind “still” • Konflikte schwelen
+            </div>
+          </div>
+          <div style="padding:12px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.04)">
+            <b>MindSpace macht sichtbar</b>
+            <div class="small" style="margin-top:6px">
+              Wo Sicherheit fehlt, warum – und welche kleine Maßnahme als nächstes Sinn ergibt.
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <div class="wrap split">
+      <div class="card box">
+        <h2 class="sectionTitle">Das Problem</h2>
+        <p class="sectionDesc">
+          In vielen Teams wird nicht offen gesprochen – nicht weil es keine Ideen gibt,
+          sondern weil die psychologische Sicherheit fehlt.
+        </p>
+        <ul class="list">
+          <li><span class="check">✓</span><div><b>Schweigen statt Ideen</b><div class="small">Gute Vorschläge verschwinden, bevor sie ankommen.</div></div></li>
+          <li><span class="check">✓</span><div><b>Fehler werden riskant</b><div class="small">Lernen wird langsamer, Qualität sinkt.</div></div></li>
+          <li><span class="check">✓</span><div><b>Stimmung bleibt unsichtbar</b><div class="small">Probleme werden spät erkannt – wenn’s schon brennt.</div></div></li>
+        </ul>
+      </div>
+
+      <div class="card box">
+        <h2 class="sectionTitle">Warum das teuer wird</h2>
+        <p class="sectionDesc">
+          Fehlende Offenheit kostet Zeit, Energie und Motivation – und macht Veränderungen schwer.
+        </p>
+        <ul class="list">
+          <li><span class="check">✓</span><div><b>Mehr Reibung</b><div class="small">Missverständnisse & “Meeting-Drehs” statt Klarheit.</div></div></li>
+          <li><span class="check">✓</span><div><b>Weniger Innovation</b><div class="small">Risiken werden gemieden – Chancen ebenso.</div></div></li>
+          <li><span class="check">✓</span><div><b>Höheres Konfliktpotenzial</b><div class="small">Ungesagtes wird zu Frust, Lagerbildung, Kündigung.</div></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section id="solution">
+    <div class="wrap">
+      <h2 class="sectionTitle">Die Lösung: MindSpace</h2>
+      <p class="sectionDesc">
+        MindSpace schafft einen sicheren Kanal für ehrliche Team-Signale – und verbindet sie direkt
+        mit Reflexion und konkreten nächsten Schritten.
+      </p>
+
+      <div class="how">
+        <div class="card step">
+          <div class="n">1</div>
+          <h3>Anonyme Pulsfragen</h3>
+          <p>Wöchentlich 3–5 kurze Fragen (z. B. “Ich kann hier Probleme offen ansprechen”).</p>
+        </div>
+        <div class="card step">
+          <div class="n">2</div>
+          <h3>Insights & Muster</h3>
+          <p>Trends, Ausreißer, Themencluster – ohne Fingerpointing, dafür mit Klarheit.</p>
+        </div>
+        <div class="card step">
+          <div class="n">3</div>
+          <h3>Maßnahmen & Ritual</h3>
+          <p>Vorschläge für kleine Interventionen + Gesprächsanlässe fürs nächste Meeting.</p>
+        </div>
+      </div>
+
+      <div class="card cta" style="margin-top:14px">
+        <div>
+          <h3>In 15 Minuten sehen, ob MindSpace zu eurem Team passt.</h3>
+          <p>Buche eine kurze Demo – wir zeigen den Ablauf und mögliche Fragen/Setups.</p>
+        </div>
+        <div class="actions">
+          <a class="btn" href="#booking">Demo buchen</a>
+          <a class="btn secondary" href="#features">Funktionen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="wrap">
+      <h2 class="sectionTitle">Funktionen</h2>
+      <p class="sectionDesc">Alles, was ihr braucht – einfach, modern, niedrigschwellig.</p>
+
+      <div class="features">
+        <div class="card feature">
+          <div class="icon">🕵️</div>
+          <h3>Anonymität, die Vertrauen schafft</h3>
+          <p>Antworten ohne Angst – Fokus auf Muster, nicht auf Personen.</p>
+        </div>
+        <div class="card feature">
+          <div class="icon">📊</div>
+          <h3>Klare Auswertung</h3>
+          <p>Trends, Schwankungen und Themenfelder, die ihr direkt besprechen könnt.</p>
+        </div>
+        <div class="card feature">
+          <div class="icon">🗂️</div>
+          <h3>Fragen-Bibliothek</h3>
+          <p>Bewährte Fragen zu Feedbackkultur, Fehlerlernen, Kommunikation, Rollen & Verantwortung.</p>
+        </div>
+        <div class="card feature">
+          <div class="icon">🧩</div>
+          <h3>Interventionen & Micro-Actions</h3>
+          <p>Konkrete kleine Schritte, die Teams sofort umsetzen können.</p>
+        </div>
+        <div class="card feature">
+          <div class="icon">🗓️</div>
+          <h3>Team-Ritual statt Einmal-Workshop</h3>
+          <p>Wiederkehrend, kurz, wirksam – Entwicklung über Wochen statt nur “Kickoff”.</p>
+        </div>
+        <div class="card feature">
+          <div class="icon">🔒</div>
+          <h3>Datenschutz-Fokus</h3>
+          <p>Transparente Regeln, was gespeichert wird – und wozu es dient.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING / CALENDLY -->
+  <section id="booking">
+    <div class="wrap">
+      <div class="card calWrap">
+        <div class="calHeader">
+          <h2 class="sectionTitle" style="margin:0">Demo / Kennenlerntermin buchen</h2>
+          <p class="small">
+            Wähle einfach einen freien Slot in Calendly. (Ersetze unten den Link durch euren Calendly-Link.)
+          </p>
+        </div>
+
+        <!-- Calendly inline widget begin -->
+        <div class="calInline calendly-inline-widget"
+             data-url="https://calendly.com/DEIN-CALENDLY-LINK/mindspace-demo"
+             style="min-width:320px;height:760px;">
+        </div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget end -->
+      </div>
+
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn secondary" href="mailto:DEINE-EMAIL@beispiel.de">Oder per E-Mail kontaktieren</a>
+        <a class="btn secondary" href="#top">Nach oben</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <h2 class="sectionTitle">FAQ</h2>
+      <p class="sectionDesc">Kurz beantwortet – für den schnellen Überblick.</p>
+
+      <div class="faq">
+        <details class="card">
+          <summary>Für wen ist MindSpace gedacht?</summary>
+          <p>Für Teams, die ehrlicher kommunizieren wollen (Produktteams, Projektteams, Führungskräfte-Runden, Ausbildungsteams etc.).</p>
+        </details>
+
+        <details class="card">
+          <summary>Wie schnell sieht man Effekte?</summary>
+          <p>Oft nach 2–4 Wochen, weil Trends sichtbar werden und kleine Interventionen sofort getestet werden können.</p>
+        </details>
+
+        <details class="card">
+          <summary>Wie bleibt es wirklich anonym?</summary>
+          <p>Antworten werden aggregiert dargestellt. Wichtig ist außerdem ein klares Team-Commitment: Es geht um Verbesserung, nicht um Schuld.</p>
+        </details>
+
+        <details class="card">
+          <summary>Was ist der nächste Schritt?</summary>
+          <p>Buche eine Demo. Dann klären wir Teamgröße, Rhythmus, Frage-Set und wie ihr MindSpace in eure Meetings integriert.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footGrid">
+    <div>
+      <div class="brand" style="gap:10px">
+        <span class="logo" aria-hidden="true"></span>
+        <span>MindSpace</span>
+      </div>
+      <p class="small" style="margin:10px 0 0">
+        MindSpace ist ein Projekt zur Stärkung der psychologischen Sicherheit im Team – damit Ideen nicht verloren gehen,
+        Probleme früher sichtbar werden und Teams wirksamer zusammenarbeiten.
+      </p>
+      <p class="small" style="margin:10px 0 0">
+        © <span id="year"></span> MindSpace • <a href="#" style="text-decoration:underline;color:var(--muted)">Impressum</a> •
+        <a href="#" style="text-decoration:underline;color:var(--muted)">Datenschutz</a>
+      </p>
+    </div>
+
+    <div class="card box">
+      <b>Kontakt</b>
+      <ul class="list" style="margin-top:8px">
+        <li><span class="check">✉</span><div><a href="mailto:DEINE-EMAIL@beispiel.de" style="text-decoration:underline">DEINE-EMAIL@beispiel.de</a></div></li>
+        <li><span class="check">⏱</span><div class="small">Demo: 15–20 Minuten</div></li>
+        <li><span class="check">📍</span><div class="small">Online (Teams/Meet)</div></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile Nav
+  const burger = document.getElementById("burger");
+  const navList = document.getElementById("navList");
+  burger?.addEventListener("click", () => navList.classList.toggle("open"));
+
+  // Smooth scroll + close menu
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener("click", (e) => {
+      const id = a.getAttribute("href");
+      if (!id || id === "#") return;
+      const el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      navList.classList.remove("open");
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.pushState(null, "", id);
+    });
+  });
+
+  // Year
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
